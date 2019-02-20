@@ -1,5 +1,9 @@
 l = [1,2,3,4,5,6,7]
 
+# for i in x
+# nesse caso o i vale 0, pois nao foi atribuido nenhum valor antes do for
+# se n tiver nada, atribui o primeiro valor a ser setado para ele como o primeiro
+
 #o num é uma variavel declarada e pode ser qqr nome
 for num in l:
     print('num vezes 1:',num)
