@@ -56,3 +56,4 @@ print(char([1,2,3]))
 
 rev = lambda s: s[::-1]
 print(rev('daniel'))
+print('\n')
