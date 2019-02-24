@@ -5,16 +5,17 @@ def display_board(board):
     for index, item in enumerate(board, start=0):
         print(item, end=' | ' if index % 3 else '\n')
 
-def player_input():
-    market = ''
+def player_input():   
+    marker = ''
+    
+    #enquanto nao for igual, repita
+    while not (marker == 'X' or marker == 'O'): #forca o usuario a digitar "X" ou "O"
+        marker = str(input('Player 1: Você quer ser X ou O? ')).upper()
 
-    while not (market == 'X' or market == 'O'):
-        market = str(input('Player 1, você quer ser "X" ou "O"? ')).upper()
-
-        if market == 'X':
-            return ('X','O')
-        else:
-            return ('O','X')
+    if marker == 'X':
+        return ('X', 'O')
+    else:
+        return ('O', 'X')
 
 def place_marker(board, marker, position):
     board[position] = marker
@@ -31,37 +32,38 @@ def win_check(board,mark):
             )
 
 def choose_first():
-    if random.randint(0,1) == 0:
+    if random.randint(0,1) == 0: #gera um numero aleatorio no intervalo de 0 a 1
         return('Player 1')
     else:
         return('Player 2')
 
 def space_check(board,position):
-    return board[position] == ' '
+    return board[position] == ' ' #se estiver vazio, ele retorna TRUE
 
 def full_board_check(board):
     for i in range(1,10):
-        if space_check(board,i):
-            return False
+        if space_check(board,i): #logo, se estiver algum espaco vazio, ele retorna True,
+            return False #entra no if e a funcao tem valor de False
         
-    return True
+    return True #caso nenhum espaco esteja vazio, ele nunca ira entrar no if, entao retorna 
+                #True para confirmar q a board esta cheia
 
 def player_choice(board):
-    position = ' '
+    position = ' ' #espaco em branco != '' isso é nada
 
     while position not in '1 2 3 4 5 6 7 8 9'.split() or not space_check(board, int(position)):
-        position = str(input('\nEscolha sua jogada (1-9): '))
-
+        position = str(input('\nEscolha sua jogada (1-9): ')) #forca o usuario a digitar os numeros
+                                                            #de 1 a 9, e sem repeticao!
     return int(position)
 
-def replay():
-    return str(input('Quer jogar novamente? "Sim" ou "Não": ')).lower().startswith('s')
+def replay(): #retorna true caso uma palavra com a digital S seja entrada
+    return str(input('Quer jogar novamente? "Sim" ou "Não": \n')).lower().startswith('s')
 
 def main():
     print('Bem vindo ao Jogo da Velha')
 
     while True:
-        board = [' '] * 10
+        board = [' '] * 10 #[' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' '] 0 a 9
         player1_marker,player2_marker = player_input()
         turn = choose_first()
         print(turn+' começa!')
@@ -78,7 +80,7 @@ def main():
             # checa vitória
             if win_check(board, player1_marker):
                 display_board(board)
-                print('\nParabéns, você ganhou!\n')
+                print('\nParabéns Jogador 1, você ganhou!\n')
                 game_on = False
             else:
                 if full_board_check(board):
@@ -97,7 +99,7 @@ def main():
             # checa vitória
             if win_check(board, player2_marker):
                 display_board(board)
-                print('\nParabéns, você ganhou!\n')
+                print('\nParabéns Jogador 2, você ganhou!\n')
                 game_on = False
             else:
                 if full_board_check(board):
@@ -107,6 +109,8 @@ def main():
                 else:
                     turn = 'Player 1'
 
+        #se digitado qqr coisa diferente de sim, ele ira retornar true, mas como o not inverte o valor logico
+        #ele entra no if e para o programa
         if not replay():
             break
 
