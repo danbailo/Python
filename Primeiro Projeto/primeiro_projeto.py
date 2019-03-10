@@ -10,7 +10,7 @@ def player_input():
     
     #enquanto nao for igual, repita
     while not (marker == 'X' or marker == 'O'): #forca o usuario a digitar "X" ou "O"
-        marker = str(input('Player 1: Você quer ser X ou O? ')).upper()
+        marker = str(input('Player 1: Do you wanna be X or O? ')).upper()
 
     if marker == 'X':
         return ('X', 'O')
@@ -52,21 +52,21 @@ def player_choice(board):
     position = ' ' #espaco em branco != '' isso é nada
 
     while position not in '1 2 3 4 5 6 7 8 9'.split() or not space_check(board, int(position)):
-        position = str(input('\nEscolha sua jogada (1-9): ')) #forca o usuario a digitar os numeros
+        position = str(input('\nChoose you move (1-9): ')) #forca o usuario a digitar os numeros
                                                             #de 1 a 9, e sem repeticao!
     return int(position)
 
 def replay(): #retorna true caso uma palavra com a digital S seja entrada
-    return str(input('Quer jogar novamente? "Sim" ou "Não": \n')).lower().startswith('s')
+    return str(input('Do you want to play again? "Yes" or "Not": \n')).lower().startswith('s')
 
 def main():
-    print('Bem vindo ao Jogo da Velha')
+    print('Welcome a Tic Tac Toe')
 
     while True:
         board = [' '] * 10 #[' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' '] 0 a 9
         player1_marker,player2_marker = player_input()
         turn = choose_first()
-        print(turn+' começa!')
+        print(turn+' start!')
 
         game_on = True
 
@@ -80,7 +80,7 @@ def main():
             # checa vitória
             if win_check(board, player1_marker):
                 display_board(board)
-                print('\nParabéns Jogador 1, você ganhou!\n')
+                print('\nCongratulations Player 1, you won!\n')
                 game_on = False
             else:
                 if full_board_check(board):
@@ -99,7 +99,7 @@ def main():
             # checa vitória
             if win_check(board, player2_marker):
                 display_board(board)
-                print('\nParabéns Jogador 2, você ganhou!\n')
+                print('\nCongratulations Player 2, you won!\n')
                 game_on = False
             else:
                 if full_board_check(board):

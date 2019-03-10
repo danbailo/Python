@@ -72,3 +72,10 @@ print('\n')
 #lista aninhada
 lst = [ x**2 for x in [x**2 for x in range(11)]]
 print(lst)
+
+
+print("\ni'm here")
+
+x = [[] for i in range(3)]
+
+print(x)
