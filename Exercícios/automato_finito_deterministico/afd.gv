@@ -1,0 +1,16 @@
+digraph automato_finito_deterministico {
+	edge [fontsize=7]
+	rankdir=LR size=7
+	node [shape=circle]
+	q1
+	node [shape=doublecircle]
+	q2
+	node [shape=circle]
+	q3
+	node [shape=none]
+	"" -> q1
+	q1 -> q2 [label="a, ..., z, A, ..., Z, 0, ..., 9"]
+	q2 -> q2 [label="a, ..., z, A, ..., Z, 0, ..., 9"]
+	q1 -> q3 [label="0, 1, 2, 3, 4, 5, 6, 7, 8, 9"]
+	q3 -> q3 [label="a, ..., z, A, ..., Z, 0, ..., 9"]
+}
