@@ -3,9 +3,6 @@ from afd import *
 
 aut=Automaton(q,sigma,gamma,"q1",["q2"])
 
-print(aut.feed('abcccc'))
-aut.reset()
-
 f = Digraph('automato_finito_deterministico', filename='afd.gv')
 f.attr(rankdir='LR', size='7')
 
@@ -32,5 +29,4 @@ while edges<len(aut.q):
         f.edge_attr = {'fontsize':'7'}
         f.edge(aut.q[edges].name, aut.q[edges].name, label = 'a, ..., z, A, ..., Z, 0, ..., 9')
     edges += 1
-
-f.view()
+    
