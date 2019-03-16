@@ -122,3 +122,20 @@ for item in account_balance.items():
         
         deposit = float(input('Input a value of deposit: '))
         account_balance[account_number] = deposit 
+
+del d
+
+print('\nhere')
+
+d = {}
+
+d['daniel'] = []
+print(d)
+d['daniel'].append('lucas')
+print(d)
+d['daniel'].append('josue')
+print(d)
+
+for v in d.values():
+    print(v)    
+    print('%s'%v[0])

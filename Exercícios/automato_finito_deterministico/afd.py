@@ -52,12 +52,13 @@ sigma=alphabet+'0123456789'
 gamma=[[],[],[]]
 for i in range(len(sigma)):
 	if i<len(alphabet):gamma[0].append("q2")
-	else:gamma[0].append("q3")
+	else:gamma[0].append("q3") #seria aqui que ele exclui as palavras que começam com numeros?
 
 gamma[1]=["q2"]*len(sigma)
 gamma[2]=["q3"]*len(sigma)
-# aut=Automaton(q,sigma,gamma,"q1",["q2"])
+#################################
+aut=Automaton(q,sigma,gamma,"q1",["q2"])
 
-# while True:
-# 	print(aut.feed(input()))
-# 	aut.reset()
+while True:
+	print(aut.feed(input()))
+	aut.reset()
