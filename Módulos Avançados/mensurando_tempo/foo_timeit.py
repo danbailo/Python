@@ -19,10 +19,10 @@ import timeit
 
 # For
 
-timeit.timeit('"-".join(str(n) for n in range(100))', number=10000)#para saber em 1, basta dividir o resultado por 10000
+print(timeit.timeit('"-".join(str(n) for n in range(100))', number=10000))#para saber em 1, basta dividir o resultado por 10000
 
 # Compreensão em listas
-timeit.timeit('"-".join([str(n) for n in range(100)])', number=10000)
+print(timeit.timeit('"-".join([str(n) for n in range(100)])', number=10000))
 
 # Map()
-timeit.timeit('"-".join(map(str, range(100)))', number=10000)
+print(timeit.timeit('"-".join(map(str, range(100)))', number=10000))
