@@ -1,4 +1,4 @@
-<b>Time Complexity of data in Python</b> - https://bit.ly/2rlovyG<br />
+<b>Time Complexity in Python</b> - https://bit.ly/2rlovyG<br />
 <b>Data Structure in Python</b> - https://bit.ly/2QghIxN<br />
 
 A maioria dos códigos possui comentários em forma de anotações, perguntas e respostas para a melhor compreensão e fixação do conteúdo.
