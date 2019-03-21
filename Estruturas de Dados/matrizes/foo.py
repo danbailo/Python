@@ -1,3 +1,5 @@
+import numpy
+
 #uma matriz bidimensional, nada mais é do que uma lista de lista
 matriz = [
     [10, 20, 30, 40],
@@ -14,3 +16,5 @@ def print_matriz(matriz):
         print('')   
 
 print_matriz(matriz)
+
+print(numpy.matrix(matriz))
