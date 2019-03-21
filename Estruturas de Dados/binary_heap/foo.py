@@ -1,3 +1,5 @@
+#https://www.ime.usp.br/~pf/analise_de_algoritmos/aulas/heap.html
+
 class BinHeap:
     def __init__(self):
         self.heapList = [0]
