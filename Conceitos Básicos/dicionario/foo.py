@@ -15,3 +15,14 @@ print(t)
 # print(d.values())
 
 # print(lst)
+
+x = {}
+while x:
+	print('hi')
+	break
+
+
+y = {'key1':51}
+while y:
+	print('I enter in y')
+	break
