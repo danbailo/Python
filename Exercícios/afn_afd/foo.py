@@ -28,13 +28,21 @@ class AFN:
 		return self.sigma
 
 	def get_delta(self):
-		print(self.get_states())
-
-# delta = {'q1':'q2,q3','q2':'q2,q3','q3':'q1'}
+		s = ['{}', self.states]
+		for j in self.states:
+			s.append((j))
+			for k in self.states:
+				if not j==k and (k,j) not in s:
+					s.append((j,k))
+		return s
 
 delta = Graph()
 
 delta.add_edge('q1','q2')
+delta.add_edge('q2','q2')
+delta.add_edge('q2','q3')
+delta.add_edge('q3','q1')
+
 
 afd = AFN(('q1','q2','q3'), ('a','b'), 'delta', 'q1', ('q1'))
 
