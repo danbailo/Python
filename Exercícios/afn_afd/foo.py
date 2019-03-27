@@ -24,18 +24,15 @@ class AFN:
 
 states = ('q1','q2','q3')
 sigma = ('a','b','ε')
+
 delta = []
+for i in states:
+	for j in sigma:
+		delta.append((i,j))
+
 initial = 'q1'
 final = ('q1')
 
-def set_delta(states, sigma):
-	global delta
-	for i in states:
-		for j in sigma:
-			delta.append((i,j))
-	return delta
-
-set_delta(states,sigma)
 
 print(delta)
 
