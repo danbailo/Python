@@ -1,3 +1,5 @@
+from collections import defaultdict
+
 class AFN:
 	def __init__(self, states, sigma, delta, initial, final):
 		self.states = states
@@ -25,31 +27,27 @@ class AFN:
 states = ('q1','q2','q3')
 sigma = ('a','b','ε')
 
-delta = []
+#especificidade do automato
+delta = defaultdict(list)
 for i in states:
 	for j in sigma:
-		delta.append((i,j))
+		if j == 'a':
+			print('oi')
+		elif (i,j) == 'q2':
+			pass
+		elif (i,j) == 'q3':
+			pass
+			
+		delta[i,j].append('teste')
 
-# d={}
-
-# i = 0
-# while i<len(delta):
-# 	d[delta[i]] = ''
-# 	i += 1
-
-# print(d)
-
-
+print(delta)
 
 initial = 'q1'
 final = ('q1')
-
-
-# print(delta)
 
 afd = AFN(states, sigma, delta, initial, final)
 
 # print(afd.convert_states()[1][0])
 # print(afd.get_states())
 # afd.get_states()
-afd.get_delta()
+# afd.get_delta()
