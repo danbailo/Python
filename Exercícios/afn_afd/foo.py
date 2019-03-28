@@ -1,6 +1,4 @@
-from collections import defaultdict
-
-class AFN:
+class Convert_to_DFA:
 	def __init__(self, states, sigma, delta, initial, final):
 		self.states = states
 		self.sigma = sigma
@@ -9,24 +7,54 @@ class AFN:
 		self.final = final
 
 	def get_states(self):
-		s = ['{}']
+		new_states = ['{}',self.states]
 		for j in self.states:
-			s.append((j))
+			new_states.append((j))
 			for k in self.states:
-				if not j==k and (k,j) not in s:
-					s.append((j,k))	
-		s.append(self.states)
-		return s
+				if not j==k and (k,j) not in new_states:
+					new_states.append((j,k))	
+		return new_states
 
 	def get_sigma(self):
 		return self.sigma
 
 	def get_delta(self):
-		print('delta: ',self.delta)
-		print('\nstates: ',self.get_states())
+		for i in self.get_states():
+			print('states: ',i)
+		
+		for i in self.delta.keys():
+			print('keys: ',i)
+
+		for i in self.delta.items():
+			print('items: ',i)
+
+	def get_delta2(self):
+		new_delta = {}
+		k = 0
+		print((self.states[0],self.states[1]))
+		# print(self.states[0]+self.states[1])
+
+		print(self.delta.items())
+		for i in self.get_states():
+			# print('i: ',i)
+			for j in self.get_sigma():
+				while k < len(self.states):
+					print(i,j)
+					if i == (self.states[0],self.states[1]):
+						print('oii')
+					k += 1
+				if (i,j) in self.delta.keys():
+					new_delta[(i,j)] = self.delta[(i,j)]
+				elif i == self.states:
+					print('i: ',i)
+					# print('j: ',j)
+					new_delta[(i,j)] = ['ok, I want repair state']
+							
+		return new_delta
+
 
 states = ('q1','q2','q3')
-sigma = ('a','b','ε')
+sigma = ('a','b') #i remove the 'ε'
 
 #especificidade do automato
 # delta = [
@@ -54,9 +82,14 @@ delta[('q3','ε')] = ['{}']
 initial = 'q1'
 final = ('q1')
 
-afd = AFN(states, sigma, delta, initial, final)
+afd = Convert_to_DFA(states, sigma, delta, initial, final)
 
 # print(afd.convert_states()[1][0])
 # print(afd.get_states())
 # afd.get_states()
-afd.get_delta()
+
+# afd.get_delta()
+afd.get_delta2()
+
+# for i,k in afd.get_delta2().items():
+# 	print(i,k)
