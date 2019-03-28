@@ -30,23 +30,30 @@ class Convert_to_DFA:
 
 	def get_delta2(self):
 		new_delta = {}
-		k = 0
-		print((self.states[0],self.states[1]))
+		n = 0
+		m = 2
+		# print((self.states[0],self.states[1]))
+		# print((self.states[0],self.states[2]))
+		# print((self.states[1],self.states[0]))
+		# print((self.states[1],self.states[2]))
+		# print((self.states[0],self.states[1]))
 		# print(self.states[0]+self.states[1])
-
-		print(self.delta.items())
+		for i in self.delta.items():
+			print(i)
 		for i in self.get_states():
-			# print('i: ',i)
+			print('i: ',i)
 			for j in self.get_sigma():
-				while k < len(self.states):
-					print(i,j)
-					if i == (self.states[0],self.states[1]):
+				if n<3 and m>-1:
+					print('n: ',n)
+					print('m: ',m)
+					if i == (self.states[n],self.states[m]):
 						print('oii')
-					k += 1
-				if (i,j) in self.delta.keys():
+						n += 1
+						m -= 1
+				elif (i,j) in self.delta.keys():
 					new_delta[(i,j)] = self.delta[(i,j)]
 				elif i == self.states:
-					print('i: ',i)
+					# print('i: ',i)
 					# print('j: ',j)
 					new_delta[(i,j)] = ['ok, I want repair state']
 							
