@@ -43,27 +43,22 @@ class Convert_to_DFA:
 		print()
 		
 		for i in self.get_states():
-			print('state: ',i)
+			print('states: ',i)
 			for j in self.get_sigma():
-				# try:
-				# 	if i == (self.states[n],self.states[n+1]): #TESTAR COM MAIS CONDICIONAIS, PASSANDO ELIFS COM INDEXACAO DE OUTROS VALORES
-				# 		print('primeiro if ',(self.states[n],self.states[n+1]))
-				# 	elif i == (self.states[n],self.states[n+2]):
-				# 		print('segundo if ',(self.states[n],self.states[n+2]))
-				# 	n += 1
-				# except IndexError:
-				# 	n -= 1
-					# print('indexerror')
+				# print('delta values: ',self.delta)
+
+				# if i in self.delta.keys():
+				# 	print('im here')
 				if (i,j) in self.delta.keys():
-					new_delta[(i,j)] = self.delta[(i,j)]
-					# print('i,j: ',(i,j))
-					print('delta i,j: ',self.delta[i,j])
+					print('here',i,j)
+					# new_delta[(i,j)] = self.delta[(i,j)]
 				elif i == self.states:
+					pass
 					# print('i: ',i)
 					# print('j: ',j)
-					new_delta[(i,j)] = ['ok, I want repair state']
+					# new_delta[(i,j)] = ['ok, I want repair state']
 							
-		return new_delta
+		return ''
 
 
 states = ('q1','q2','q3')
@@ -104,7 +99,9 @@ afd = Convert_to_DFA(states, sigma, delta, initial, final)
 # afd.get_states()
 
 # afd.get_delta()
-# afd.get_delta2()
+print(afd.get_delta2())
 
-for i,k in afd.get_delta2().items():
-	print(i,k)
+
+
+# for i,k in afd.get_delta2().items():
+# 	print(i,k)
