@@ -102,26 +102,26 @@ for item in d.items():
 
 account_balance={}
 
-account_number = str(input())
+# account_number = str(input())
 # deposit = float(input('Input a value of deposit: '))
 # account_balance[account_number] = deposit 
 
-for item in account_balance.items():
-    print(item)
+# for item in account_balance.items():
+#     print(item)
 
-    print('Please, input a number of account: ')    
-    account_number = str(input())
-    # print(len(account_number))
+#     print('Please, input a number of account: ')    
+#     account_number = str(input())
+#     # print(len(account_number))
 
-    while len(account_number) != 6 or account_number in account_balance:
-        if len(account_number) != 6:
-            print('Account must have 6 numbers: ')
-        elif account_number in account_balance:
-            print('This account has exist in bank, input a different number: ')
-        account_number = str(input())
+#     while len(account_number) != 6 or account_number in account_balance:
+#         if len(account_number) != 6:
+#             print('Account must have 6 numbers: ')
+#         elif account_number in account_balance:
+#             print('This account has exist in bank, input a different number: ')
+#         account_number = str(input())
         
-        deposit = float(input('Input a value of deposit: '))
-        account_balance[account_number] = deposit 
+#         deposit = float(input('Input a value of deposit: '))
+#         account_balance[account_number] = deposit 
 
 del d
 
@@ -137,5 +137,26 @@ d['daniel'].append('josue')
 print(d)
 
 for v in d.values():
-    print(v)    
-    print('%s'%v[0])
+    print(v)     
+    print('%s' % v[0])
+
+del d
+
+
+print('\ntesting here')
+d = {}
+
+d[('key1',1)] = 'daniel'
+d[('key2',2)] = 'josue'
+d[('key3',3)] = 'lucas'
+
+print(d['key1',1])
+print(d[('key1',1)][0])
+
+print(d.values())
+
+print(('tupla',1))
+print(('mesma tupla',1)[0])
+
+if ('key1',1)[0] in d.keys():
+	print('ok')
