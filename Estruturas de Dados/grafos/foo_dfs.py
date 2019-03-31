@@ -1,6 +1,8 @@
 from string import ascii_uppercase as alphabet
 #dfs - Depth-first_search ( busca em profundidade )
 #http://www.algolist.net/Algorithms/Graph/Undirected/Depth-first_search
+#https://techdifferences.com/difference-between-bfs-and-dfs.html
+
 class Graph(object): 
     def __init__(self, vertices): #adjacency matrix
         self.vertices = vertices

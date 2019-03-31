@@ -1,6 +1,8 @@
 from string import ascii_uppercase as alphabet
 #bfs - Breadth-first search ( busca em largura )
 #https://eddmann.com/posts/depth-first-search-and-breadth-first-search-in-python/
+#https://techdifferences.com/difference-between-bfs-and-dfs.html
+
 class Graph(object): 
     def __init__(self, vertices): #adjacency matrix
         self.vertices = vertices
