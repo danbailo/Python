@@ -1,11 +1,12 @@
 #Python Turtle - WordArt Challenge - https://www.101computing.net/python-turtle-wordart-challenge/
 import turtle
 import random
+import time
 from alphabet import alphabet
 
 myPen = turtle.Turtle()
 myPen.hideturtle()
-myPen.speed(2)
+myPen.speed(1)
 window = turtle.Screen()
 window.bgcolor("#000000")
 myPen.pensize(2)
@@ -29,9 +30,22 @@ def displayMessage(message,fontSize,color,x,y):
     x += characterSpacing 
 
 #Main Program Starts Here
-fontSize = 30
+fontSize = 10
 characterSpacing = 5
-fontColor = "#FF00FF"
+fontColor = "white"
 
-message = 'vai toma no cu'
-displayMessage(message,fontSize,fontColor,-270,0)
+for i in range(2):
+	if i == 0:
+		message = 'Prepare se algo incrvel esta prestes a acontecer..................'
+	elif i== 1:
+		fontSize = 30
+		time.sleep(3)
+		myPen.speed(10)
+		myPen.pensize(5)
+		fontColor = "red"
+		message = 'vem de boquinha seu merda UUUUHUHUHhhhhhhhhhhhhhhhhh...............'
+
+	displayMessage(message,fontSize,fontColor,-600,0)
+	myPen.clear()
+	# time.sleep(10)
+
