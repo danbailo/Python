@@ -1,5 +1,3 @@
-#https://www.youtube.com/watch?v=IG1QioWSXRI
-
 graph = {'a':{'b':10,'c':3},'b':{'c':1,'d':2},'c':{'b':4,'d':8,'e':2},'d':{'e':7},'e':{'d':9}}
  
 def dijkstra(graph,start,goal):
@@ -36,8 +34,8 @@ def dijkstra(graph,start,goal):
             break
     path.insert(0,start)
     if shortest_distance[goal] != infinity:
-        print('Shortest distance is',shortest_distance[goal])
-        print('And the path is',path)
+        print('Shortest distance is ' + str(shortest_distance[goal]))
+        print('And the path is ' + str(path))
  
  
 dijkstra(graph, 'a', 'b')
