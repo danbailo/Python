@@ -59,6 +59,6 @@ gamma[2]=["q3"]*len(sigma)
 #################################
 aut=Automaton(q,sigma,gamma,"q1",["q2"])
 
-while True:
-	print(aut.feed(input()))
-	aut.reset()
+# while True:
+# 	print(aut.feed(input()))
+# 	aut.reset()
