@@ -9,3 +9,5 @@ def func(i):
 for i in range(10):
     t = Thread(target=func, args=(i,))
     t.start()
+
+	asdsa;
