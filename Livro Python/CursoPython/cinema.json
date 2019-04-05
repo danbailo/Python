@@ -1,0 +1,14 @@
+[
+  {
+    "titulo": "JSON x CSV",
+    "resumo": "o duelo entre dois formatos para representar informações",
+    "ano": 2019,
+    "genero": ["aventura", "ação", "ficção"]	
+  },
+  {
+    "titulo": "JSON James",
+    "resumo": "a história de uma lenda do velho oeste",
+    "ano": 2018,
+    "genero": ["western"]	
+  }
+]

@@ -1,0 +1,5 @@
+1001Leite
+1002Biscoito
+1003Café
+1004Torradas
+1005Chá
