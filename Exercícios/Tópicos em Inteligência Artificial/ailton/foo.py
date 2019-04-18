@@ -23,52 +23,61 @@ def load_data(x_file, y_file):
 
 def calculate_h_theta(X, thetas, m):
   # Inserir código do cálculo do h_theta
-
-  temp = np.ones((m,2))
-  for i in range(m-1):
-    for j in range(2-1):
-      if j!=0:
-        temp[i][j]=X[i]
+  # print(X)
+  
+  # temp = np.ones((m,2))
+  # for i in range(m-1):
+  #   for j in range(2-1):
+  #     if j!=0:
+  #       temp[i][j]=X[i]
+  
+  # Matriz, indice, valor, eixo
+  temp = np.insert(X, 0, 1, axis=1)
+  
  
-  h_theta = np.zeros((m,1)) 
+  # h_theta = np.zeros((m,1))
   h_theta = np.dot(temp,thetas)
  
   return h_theta
  
 def calculate_J(X, Y, thetas):
   J = 0
-
+  m, _ = np.shape(X)
+  
   h_theta = calculate_h_theta(X, thetas, len(X))
 
-  e = np.zeros((len(X),1))
   e = h_theta-Y
-  X = np.transpose(X)
+  J = np.dot(np.transpose(e),e)/(2*m)
 
-  J = J - (1/(2*len(X)))*X*e
- 
   # Inserir o código do cálculo de J(theta_0, theta_1)
- 
- 
+
   return J
 
 def do_train(X, Y, thetas, alpha, iterations):
   J = np.zeros(iterations)
+  # print('J',J)
   m, _ = np.shape(X)
   for i in range(iterations):
     J[i] = calculate_J(X, Y, thetas)
     h_theta = calculate_h_theta(X, thetas, m)
+    e = h_theta-Y
     # Inserir código para atualização dos valores de theta_0 e theta_1
+    # thetas = thetas ....
+    temp = np.insert(X, 0, 1, axis=1)
+    temp = np.transpose(temp)
+    thetas = (thetas)-(np.dot(temp,e))*(alpha/m)
+    
 
-  return J
+  return J, thetas
 
 
 if __name__ == "__main__":
   X, Y = load_data('entradas_x.txt', 'saidas_y.txt')
 
   thetas = np.zeros((2,1))
-  alpha = 0
+  alpha = 0.0020
 
-  J = do_train(X, Y, thetas, alpha=alpha, iterations=500)
+  J, thetas = do_train(X, Y, thetas, alpha=alpha, iterations=30000)
 
   # Graphs to improve data visualization
  
