@@ -61,8 +61,6 @@ if __name__ == "__main__":
 	plt.savefig('crescimento_fibonacci_pandas.png')
 	
 	plt.show()
-
-	asdasd;
 	
 
 
