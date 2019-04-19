@@ -27,12 +27,14 @@ def binarySearch (arr, l, r, x):
         return -1
 
 def BBRecurs(A, p, r, x):
-if p == r-1:
-	return r
-	else  q = (p+r)/2
-		if  A[q] < x
-			return BBRecurs(A, p, r, x)
-			else return BBRecurs(A, p, r, x)
+    if p == r-1:
+	    return r
+    else: 
+        q = int((p+r)/2)
+        if A[q] < x:
+            return BBRecurs(A, q, r, x)
+        else:
+            return BBRecurs(A, p, q, x)
 
 # Test array 
 # arr = [ 2, 3, 4, 10, 40 ] 
@@ -46,3 +48,7 @@ if result != -1:
     print("Element is present at index % d" % result) 
 else: 
     print("Element is not present in array")
+
+array = [1,2,3,4,5,6,7,8,9,10]
+
+print(BBRecurs(array,0,len(array)+1,9))
