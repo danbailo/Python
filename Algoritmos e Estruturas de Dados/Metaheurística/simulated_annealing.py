@@ -32,7 +32,7 @@ class OneMax:
 		while T > T_min:
 
 			# iterações com uma mesma temperatura
-			for i in range(max_iter):
+			for _ in range(max_iter):
 
 				new_solution = self.neighbor() # gera uma nova solução
 				new_cost = self.obj_fun(new_solution) # calcula o custo dessa nova solução
