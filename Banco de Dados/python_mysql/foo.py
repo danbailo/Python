@@ -48,11 +48,12 @@ print()
 #envia as modificacoes de inserção para o banco
 # mydb.commit()
 
-print("Dados da tabela:")
+print("Dados da tabela usando fetchall:")
 mycursor.execute("SELECT * FROM customers;")
+myresult = mycursor.fetchall()
 #print(mycursor)
-for db in mycursor:
-    print(db)    
+for row in myresult:
+    print(row)    
 print()
 
 
@@ -61,13 +62,6 @@ print()
 # mycursor.execute("INSERT INTO customers VALUES(%s,%s,%s)",("Daniel", "Itibere 808",None))
 
 # mydb.commit()
-
-print("Dados da tabela:")
-mycursor.execute("SELECT * FROM customers;")
-#print(mycursor)
-for db in mycursor:
-    print(db)    
-print()
 
 # inserindo multiplos valores
 
@@ -93,3 +87,36 @@ print()
 # mydb.commit()
 
 # print(mycursor.rowcount, "was inserted.")
+
+#inserindo um valor e retornando seu id
+
+# sql = "INSERT INTO customers VALUES (%s, %s, %s)"
+# val = ("Michelle", "Blue Village", None)
+# mycursor.execute(sql, val)
+
+# mydb.commit()
+
+# print("1 record inserted, ID:", mycursor.lastrowid)
+
+
+#selecionando colunas
+mycursor.execute("SELECT name, address FROM customers")
+myresult = mycursor.fetchall()
+
+for x in myresult:
+  print(x)
+print()
+
+mycursor.execute("SELECT * FROM customers WHERE id = 15")
+myresult = mycursor.fetchone()
+print(myresult)  
+print()
+
+sql = "SELECT * FROM customers WHERE address ='Park Lane 38'"
+
+mycursor.execute(sql)
+
+myresult = mycursor.fetchall()
+
+for x in myresult:
+  print(x)
