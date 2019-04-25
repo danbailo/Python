@@ -41,6 +41,30 @@ print()
 #adicionando uma primary key
 #mycursor.execute("ALTER TABLE customers ADD COLUMN id INT AUTO_INCREMENT PRIMARY KEY")
 
-sql = "INSERT INTO customers (name, address) VALUES (%s, %s)"
-val = ("John", "Highway 21")
-mycursor.execute(sql, val)
+# sql = "INSERT INTO customers (name, address) VALUES (%s, %s)"
+# val = ("John", "Highway 21")
+# mycursor.execute(sql, val)
+
+#envia as modificacoes de inserção para o banco
+# mydb.commit()
+
+print("Dados da tabela:")
+mycursor.execute("SELECT * FROM customers;")
+#print(mycursor)
+for db in mycursor:
+    print(db)    
+print()
+
+
+
+# mycursor.execute('INSERT INTO customers VALUES("Daniel", "Itibere 808", "NULL")')
+mycursor.execute("INSERT INTO customers VALUES(%s,%s,%s)",("Daniel", "Itibere 808",None))
+
+# mydb.commit()
+
+print("Dados da tabela:")
+mycursor.execute("SELECT * FROM customers;")
+#print(mycursor)
+for db in mycursor:
+    print(db)    
+print()
