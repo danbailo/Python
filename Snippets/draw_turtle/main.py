@@ -43,7 +43,7 @@ for i in range(2):
 		myPen.speed(10)
 		myPen.pensize(5)
 		fontColor = "red"
-		message = 'chupa meu pau seu bosta kkkkkkk...............'
+		message = '..............casa cmg seu GOSTOSO..............'
 
 	displayMessage(message,fontSize,fontColor,-600,0)
 	myPen.clear()
