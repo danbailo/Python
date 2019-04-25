@@ -58,7 +58,7 @@ print()
 
 
 # mycursor.execute('INSERT INTO customers VALUES("Daniel", "Itibere 808", "NULL")')
-mycursor.execute("INSERT INTO customers VALUES(%s,%s,%s)",("Daniel", "Itibere 808",None))
+# mycursor.execute("INSERT INTO customers VALUES(%s,%s,%s)",("Daniel", "Itibere 808",None))
 
 # mydb.commit()
 
@@ -68,3 +68,28 @@ mycursor.execute("SELECT * FROM customers;")
 for db in mycursor:
     print(db)    
 print()
+
+# inserindo multiplos valores
+
+# sql = "INSERT INTO customers VALUES (%s, %s, %s)"
+# val = [
+#   ('Peter', 'Lowstreet 4', None),
+#   ('Amy', 'Apple st 652', None),
+#   ('Hannah', 'Mountain 21', None),
+#   ('Michael', 'Valley 345', None),
+#   ('Sandy', 'Ocean blvd 2', None),
+#   ('Betty', 'Green Grass 1', None),
+#   ('Richard', 'Sky st 331', None),
+#   ('Susan', 'One way 98', None),
+#   ('Vicky', 'Yellow Garden 2', None),
+#   ('Ben', 'Park Lane 38', None),
+#   ('William', 'Central st 954', None),
+#   ('Chuck', 'Main Road 989', None),
+#   ('Viola', 'Sideway 1633', None)
+# ]
+
+# mycursor.executemany(sql, val)
+
+# mydb.commit()
+
+# print(mycursor.rowcount, "was inserted.")
