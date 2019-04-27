@@ -3,7 +3,7 @@ from random import uniform, randint
 texto = []
 
 def obterTexto():
-    for _ in range(0,100):
+    for _ in range(0,140):
         texto.append(
             str(uniform(1.50, 2.20)) + ';' +
             str(uniform(50, 120)) + ';' +
@@ -11,11 +11,9 @@ def obterTexto():
         )
 
 def gerarArquivo():
-    arq = './peso.csv'
-    entrada = open(arq, 'w+', encoding='UTF-8')
-    obterTexto()
-    entrada.writelines(texto)
-    entrada.close()
+    with open('./peso.csv', 'w+', encoding='UTF-8') as entrada:
+        obterTexto()
+        entrada.writelines(texto)
 
 if __name__ == "__main__":
     gerarArquivo()
