@@ -29,7 +29,7 @@ try:
             for c, col in enumerate(row):
                 workSheet.write(r+1, c, col)
 
-        workBook.save("./Excel-MySQL.xls")
+        workBook.save("./MySQL.xls")
 
         print("\nDATA WRITTEN SUCCESSFULLY TO EXCEL FILE")
 
