@@ -112,11 +112,9 @@ myresult = mycursor.fetchone()
 print(myresult)  
 print()
 
+
 sql = "SELECT * FROM customers WHERE address ='Park Lane 38'"
-
 mycursor.execute(sql)
-
 myresult = mycursor.fetchall()
-
 for x in myresult:
   print(x)
