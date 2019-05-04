@@ -17,7 +17,7 @@ class OneMax:
 		return new_neighbor
 
 	# função objetivo
-	def obj_fun(self, solution):
+	def obj_fun(self, solution): #se a soma estiver mais perto do tamanho, melhor
 		return sum(solution)
 
 	'''
@@ -27,28 +27,40 @@ class OneMax:
 		alpha -> decaimento da temperatura
 		max_iter -> quantidade de iterações com uma mesma temperatura
 	'''
-	def run_anneal(self, T = 1.0, T_min = 0.00001, alpha = 0.9, max_iter = 100):
+	def run_anneal(self, T = 1, T_min = 0.00001, alpha = 0.9, max_iter = 100):
 
 		while T > T_min:
 
 			# iterações com uma mesma temperatura
 			for _ in range(max_iter):
-
+				print()
+				print('solution:',self.solution)
 				new_solution = self.neighbor() # gera uma nova solução
+				print('new_solution:',new_solution)
 				new_cost = self.obj_fun(new_solution) # calcula o custo dessa nova solução
+				print('new_cost:',new_cost)
 				delta = self.cost - new_cost # calcula a diferença dos custos
+				print('delta:',delta)
 				ap = math.exp(-delta / T) # proababilidade de aceitação de uma solução de piora
+				print('approved:',ap)
 
 				if ap > random.random(): # verifica se aceita ou não
+					print('approved is larger than random')
 					self.solution = new_solution[:] # copia a nova solução
 					self.cost = new_cost # atribui o novo custo
 
+			print("temperature:",T)
 			T = T * alpha
 
 	def get_solution(self):
 		return self.solution
 
+# 1e-05 == 0.00001
+# 1.0290430145553226e-05 == 0.000010290430145553226
+
 one_max = OneMax(10)
-print('Solução inicial: %s' % str(one_max.get_solution()))
+
+print('Initial solution: %s' % str(one_max.get_solution()))
 one_max.run_anneal()
-print('Solução final: %s' % str(one_max.get_solution()))
+print()
+print('Final solution: %s' % str(one_max.get_solution()))
