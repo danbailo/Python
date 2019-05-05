@@ -1,3 +1,6 @@
+#manipulacao de linha de comando
+#https://docs.python.org/3/library/argparse.html
+
 import sys
 
 def soma(n1, n2):
