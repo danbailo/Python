@@ -1,4 +1,0 @@
-dijkstra e um algoritmo guloso;
-um algoritmo guloso e aquele que toma a decisão que parece ser a ótima no momento;
-ou seja, atravez de uma decisao local ótima, o algoritmo espera chegar na solução ótima global;
-porem, isso nem sempre ocorre, MAS no dijkstra isso SEMPRE ocorre! Desde respeite as restrições
