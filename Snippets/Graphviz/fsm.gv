@@ -1,0 +1,7 @@
+digraph finite_state_machine {
+	rankdir=LR size=7
+	node [shape=circle]
+	teste -> q2 [label="a,b"]
+	node [shape=none]
+	"" -> teste
+}
