@@ -1,22 +1,22 @@
 <b>Time Complexity in Python</b> - https://bit.ly/2rlovyG<br />
 <b>Data Structure in Python</b> - https://bit.ly/2QghIxN<br />
 
-<b>With and Try..Except</b>
+<b>With and Try..Except</b><br>
 With is a context manager it's usually used to manage resource objects. Try/except catches exception in a block of code.<br>
 
 with is a loop. It's got nothing to do with exceptions. If you want to check for exceptions, you can do
 
-try:
-    some requests code
-except SomeError:
-    tell user about an exception. 
-Play around with invalid pages and find what kind of exceptions you get
+try:<br>
+    some requests code<br>
+except SomeError:<br>
+    tell user about an exception. <br>
+Play around with invalid pages and find what kind of exceptions you get<br>
 
-Like ConnectionRefusedError
-
+Like ConnectionRefusedError<br>
+<br>
 try:
     code
-except ConnectionRefusedError:
+except ConnectionRefusedError:<br>
     print('Your connection was refunded') <br>
 
 For files it's usually a good idea to use a with loop.    
