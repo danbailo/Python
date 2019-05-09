@@ -40,13 +40,16 @@ if __name__ == "__main__":
 
         fetch = search(name,typeof)
 
-        if len(fetch) == 0:
-            print('Movie not found!')
-            print()
-        else:
-            # print(search(name,typeof))
-            # print(fetch[::])
-            for i in fetch:
-                print(i)
-            print('Total of Results:',len(fetch))
+        try:
+            if len(fetch) == 0:
+                print('Movie not found!')
+                print()
+            else:
+                for i in fetch:
+                    print(i)
+                print('Total of Results:',len(fetch))
+                print()
+        except TypeError as err:
+            print('URL INVALID!:',err)
+            print('Please, get the correct url and try again!')
             print()
