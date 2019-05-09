@@ -7,7 +7,6 @@ import json
 
 request = None
 
-
 def search(title, typeof=None):
     if typeof is None or typeof == '*': typeof = ''
     all_pages = []
@@ -68,3 +67,4 @@ if __name__ == "__main__":
                 show(fetch)          
         except TypeError as err:
             print('MAIN ERROR:',err)
+            
