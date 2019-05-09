@@ -1,4 +1,5 @@
 import requests
+import socket
 import json
 
 request = None
@@ -6,13 +7,15 @@ request = None
 def search(title, typeof=None):
     if typeof is None or typeof == '*': typeof = ''
     details = []
-    baseURL = 'http://www.omdbapi.com/'
-    apiKey = '3232c818'
+    ip = socket.gethostbyname('www.omdbapi.com')
+    header = {'Host':'www.omdbapi.com'}
+    baseURL = 'http://'
+    apiKey = 'YOUR_KEY'
     i = 1
     while i<=100:
-        inputURL = baseURL+'?s='+title+'&page='+str(i)+'&type='+typeof+'&apikey='+apiKey
+        inputURL = baseURL+ip+'?s='+title+'&page='+str(i)+'&type='+typeof+'&apikey='+apiKey
         try:
-            request = requests.get(inputURL)
+            request = requests.get(inputURL,headers=header)
             dict_request = json.loads(request.text)
             if dict_request['Response'] == 'True': 
                 for k in dict_request['Search']:
