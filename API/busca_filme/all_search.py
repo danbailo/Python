@@ -23,7 +23,6 @@ def search(title, typeof=None):
                        'Type: '+k['Type']+'\n'+
                         'Poster: '+k['Poster']+'\n'
                     )
-                details.append('Total Result: '+dict_request['totalResults'])
             else: return details
         except Exception as err:
             print('REQUEST ERROR:',err)
@@ -33,9 +32,9 @@ def search(title, typeof=None):
 if __name__ == "__main__":
     while True:
         name = str(input('Input the NAME or F to exit: '))
-        if name.lower() == 'f': break
+        if name.lower() == 'f': exit()
         typeof  = str(input('Input the TYPE or "*" for all, F to exit: '))
-        if typeof.lower() == 'f': break
+        if typeof.lower() == 'f': exit()
         print('Fetching...')
         print()
 
@@ -49,3 +48,5 @@ if __name__ == "__main__":
             # print(fetch[::])
             for i in fetch:
                 print(i)
+            print('Total of Results:',len(fetch))
+            print()
