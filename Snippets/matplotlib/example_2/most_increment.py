@@ -12,10 +12,11 @@ plt.plot( x, data1, 'k:', color='orange') # linha pontilha orange
 plt.plot( x, data2, 'r^') # red triangulo
 plt.plot( x, data2, 'k--', color='blue')  # linha tracejada azul
 
-plt.axis([-10, 60, 0, 11])
+plt.axis([-10, 60, 0, 11]) #adiciona mais comprimeto ao eixo
 plt.title("Mais incrementado")
 
 plt.grid(True)
 plt.xlabel("eixo horizontal")
 plt.ylabel("que legal")
+plt.savefig('axis.png')
 plt.show()
