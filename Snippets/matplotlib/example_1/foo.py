@@ -12,7 +12,7 @@ y2 = np.random.rand(150)
 
 plt.scatter(x, y)
 plt.scatter(x2, y2)
-
+plt.savefig('scatter.pdf')
 plt.show()
 
 
