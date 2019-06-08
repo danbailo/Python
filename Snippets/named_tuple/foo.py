@@ -23,3 +23,9 @@ print(p.idade)
 
 #[11:08 PM, 5/28/2019] Giuliano Oliveira: da pra você herdar tbm
 #[11:08 PM, 5/28/2019] Giuliano Oliveira: tipo class User(namedtuple("User",["nome","senha"])
+
+print('nome: {}, idade:{}'.format(p.nome,p.idade))
+print('nome: {nome}, idade:{idade}'.format(nome=p.nome,idade=p.idade))
+
+person = {'name':'daniel', 'age': 19}
+print("Hello, {name}. You are {age}.".format(name=person['name'], age=person['age']))
