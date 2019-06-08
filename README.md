@@ -11,20 +11,20 @@ With is a context manager it's usually used to manage resource objects. Try/exce
 
 with is a loop. It's got nothing to do with exceptions. If you want to check for exceptions, you can do
 
-try:<br/>
-&nbsp; &nbsp; some requests code<br/>
-except SomeError:<br/>
-&nbsp; &nbsp; tell user about an exception.<br/>
+        try:
+            some requests code
+        except SomeError:
+            tell user about an exception.
 
 
-Play around with invalid pages and find what kind of exceptions you get<br>
+Play around with invalid pages and find what kind of exceptions you get
 
-Like ConnectionRefusedError<br>
+Like `ConnectionRefusedError`
 
-try:<br/>
-&nbsp; &nbsp; code<br/>
-except ConnectionRefusedError:<br/>
-&nbsp; &nbsp; print('Your connection was refunded')<br/>
+        try:
+            code
+        except ConnectionRefusedError:
+            print('Your connection was refunded')
 
 For files it's usually a good idea to use a with loop.<br> 
 
