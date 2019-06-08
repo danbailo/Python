@@ -1,10 +1,10 @@
-coins = [1,3,4,5]
-
+coins = [1, 3, 7, 9, 11]
 def change(v):
     if v == 0: return 0
     if v in coins: return 1
     if v < 0: return float('inf')
-    return min([change(v-i) for i in coins])+1
+    x = min([change(v-i) for i in coins])+1
+    if x: return 1
 
 r = [False for i in range(10000)]
 def change_dinamic(v):
@@ -15,7 +15,7 @@ def change_dinamic(v):
     r[v] = min([change_dinamic(v-i) for i in coins])+1
     return r[v]
 
-moedas={1,3,4,5}
+moedas={1, 3, 7, 9, 11}
 mem=dict(zip(list(moedas),[1]*len(moedas)))
 
 def troco(v):
@@ -28,6 +28,10 @@ def troco(v):
     return ans
 
 while True:
-    v = int(input('input any number: '))
-    print(troco(v))
+    try:
+        v = int(input('input any number: '))
+        print(change(v))
+    except EOFError:
+        print(flush=True)
+        exit(-1)
     # print(change_dinamic(v))
