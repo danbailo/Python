@@ -21,3 +21,5 @@ plt.xlabel("eixo horizontal")
 plt.ylabel("que legal")
 plt.savefig('axis.png')
 plt.show()
+
+#teste commit local
